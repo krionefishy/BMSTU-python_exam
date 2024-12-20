@@ -39,12 +39,12 @@ with open("sort_binary/numbers.bin", "r+b") as file:
             file.write(struct.pack("q", curr_val))
             
             
+            
 with open("sort_binary/numbers.bin", 'rb') as file:
     lst = []
     number = file.read(8)
     while number:
-
         num = struct.unpack("q", number)[0]
         lst.append(num)   
         number = file.read(8)     
-    print(lst)
+    print(*lst)

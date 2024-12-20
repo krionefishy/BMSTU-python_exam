@@ -1,6 +1,6 @@
 input_file = "matrix_transpose/in.txt"
 output_file = "matrix_transpose/out.txt"
-with open(input_file, "r+", encoding="utf-8") as f, open(output_file, "a", encoding = "utf-8") as o:
+with open(input_file, "r+", encoding="utf-8") as f, open(output_file, "w", encoding = "utf-8") as o:
     l = len(f.readline()) + 1
     f.seek(0)
     for i in range(0, l, 2):

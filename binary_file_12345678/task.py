@@ -34,7 +34,7 @@ with open(input_file, "rb") as file:
     file.seek(0,2)
     length = file.tell() // 8
     file.seek(0)
-    change_numbers(input_file, 0, length)
+    change_numbers(input_file,0,length)
     change_numbers(input_file,0,length//2)
     number = file.read(8)
     res = []
