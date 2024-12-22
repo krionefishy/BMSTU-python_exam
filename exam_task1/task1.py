@@ -7,7 +7,7 @@ def count_palindromes_in_string(s: str) -> int:
     return co
 
 
-with open("exam_task1/in.txt", "r", encoding="utf-8") as file:
+with open("exam_task1/in.txt", "r", encoding="utf-8") as file, open("exam_task1/out.txt", "w", encoding="utf-8") as o:
     
     first_string = file.readline()
     palindromes = [count_palindromes_in_string(first_string)]
@@ -30,11 +30,9 @@ with open("exam_task1/in.txt", "r", encoding="utf-8") as file:
         number_of_next_line +=1 
         next_line = file.readline()
         
-    
-        
-with open("exam_task1/in.txt", "r", encoding="utf-8") as f, open("exam_task1/out.txt", "w", encoding="utf-8") as o:
+    file.seek(0)
     n = 0
-    string = f.readline()
+    string = file.readline()
     while string:
         char_list = list(string)
         for i in chars_to_delete[::-1]:
@@ -43,5 +41,5 @@ with open("exam_task1/in.txt", "r", encoding="utf-8") as f, open("exam_task1/out
         res = "".join(char_list).strip("\n") + " " + str(palindromes[n]) + "\n"
         o.write(res)
         n += 1
-        string = f.readline()
-     
+        string = file.readline()
+    
