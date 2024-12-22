@@ -23,7 +23,7 @@ with open("exam_task1/in.txt", "r", encoding="utf-8") as file:
     while next_line:
         palindromes.append(count_palindromes_in_string(next_line))
         for j in chars_to_delete:
-            if next_line[j+number_of_next_line*1] == "%":
+            if next_line[j+number_of_next_line] == "%":
                 continue
             else:
                 chars_to_delete.remove(j)

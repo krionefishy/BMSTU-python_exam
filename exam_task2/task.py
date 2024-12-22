@@ -51,7 +51,7 @@ path = [[]]
 
 
 with open("exam_task2/in.txt", "r", encoding="utf-8") as file:
-    matrix = [i.strip().split() for i in file.readlines()]
+    matrix = [i.split() for i in file.readlines()]
     max_koord = len(matrix) - 1
     
     
@@ -66,7 +66,7 @@ for i in range(max_koord+1):
                 path.append([])
                 continue
             
-longest_path = max(path, key = lambda x: len(x))
+longest_path = max(path, key = len)
 
 last_string = [len([j for j in longest_path if j[1] == i]) for i in range(max_koord + 1)]
 
