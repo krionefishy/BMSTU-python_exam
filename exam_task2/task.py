@@ -46,6 +46,7 @@ def go_by_direction(drct, k1, k2):
         return "end"
             
     return go_by_direction(nxt, c1, c2)
+
 path = [[]]
 
 
