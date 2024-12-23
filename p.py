@@ -1,2 +1,3 @@
-s = '   a s g d s   '
-print(s.split())
+ch = "14.5A"
+print(float.fromhex(ch))
+print()
