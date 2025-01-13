@@ -33,4 +33,3 @@ with open("exam_task10/in.txt", "r", encoding="utf-8") as f, \
             n += 1
         o.write(s)
         t.seek(0)
-    
