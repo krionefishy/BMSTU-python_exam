@@ -19,6 +19,8 @@ with open("exam_task12/in.txt", "r", encoding="utf-8") as f, open("exam_task12/o
                     co[i][0] = 1
                     co[i][1] = current
                 current += 1
+            else:
+                current -= 1
         s = f.readline()
         
         
