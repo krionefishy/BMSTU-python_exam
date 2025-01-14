@@ -14,22 +14,28 @@ with open("exam_task1/in.txt", "r", encoding="utf-8") as file, open("exam_task1/
     chars_to_delete = []
     for i in range(len(first_string)):
         if first_string[i] == "%":
-            chars_to_delete.append(i)
-                    
+            chars_to_delete.append(i)        
     number_of_next_line = 1
     
     next_line = file.readline()
     
     while next_line:
         palindromes.append(count_palindromes_in_string(next_line))
+        if next_line.count("%") == 0:
+            chars_to_delete.clear()
+            break
         for j in chars_to_delete:
-            if next_line[j+number_of_next_line] == "%":
-                continue
-            else:
+            try:
+                if next_line[j+number_of_next_line] == "%":
+                    continue
+                else:
+                    chars_to_delete.remove(j)
+            except:
+                IndexError
                 chars_to_delete.remove(j)
+                
         number_of_next_line +=1 
         next_line = file.readline()
-        
     file.seek(0)
     n = 0
     string = file.readline()
