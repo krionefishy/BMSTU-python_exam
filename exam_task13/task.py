@@ -7,9 +7,20 @@ def hex_to_oct(x: str):
             left, right = l 
         else:
             left = l[0]
-            right = 0
+            right = "0"
         left_oct = oct(int(left, 16))[2:]
-        right_oct = oct(int(right, 16))[2:]
+        
+        right_ten = 0
+        c = -1
+        for i in right:
+            right_ten = int(i, 16) * (16 ** -1)
+        
+        right_oct = ""
+        for i in range(6):
+            right_ten *= 8
+            right_oct += str(int(right_ten))
+            right_ten -= int(right_ten)
+
         return left_oct + "," + right_oct
     
     else:
