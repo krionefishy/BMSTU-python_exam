@@ -14,7 +14,7 @@ def hex_to_oct(x: str):
         c = -1
         for i in right:
             right_ten = int(i, 16) * (16 ** -1)
-        
+            c -= 1
         right_oct = ""
         for i in range(6):
             right_ten *= 8
